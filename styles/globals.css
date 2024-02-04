@@ -1,0 +1,17 @@
+:root {
+    --spheri-violet: #bb86fc;
+    --spheri-violet-button: #c395fd;
+    --spheri-black: #212121;
+    --spheri-black-black: '#101014';
+    --spheri-black-black-black: '#111111';
+    
+    --spheri-grey: #2f2f2f;
+    --spheri-medium-grey: #444444;
+    --spheri-light-grey: #aaaaaa;
+    --spheri-violet-hover: #332e3d;
+  }
+  
+  html {
+    background-color: var(--spheri-black);
+  }
+  
