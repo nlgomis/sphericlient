@@ -58,8 +58,14 @@ export default function Main() {
         console.log('No token');
       }
       try {
-        const res = await axios.get(`http://${URL_DOMAIN}/api/artwork/getArtworkList`, { withCredentials: true });
-
+        const res = await axios.get(`${URL_DOMAIN}/api/artwork/getArtworkList`, {
+          withCredentials: true,
+          headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000', // or your client's origin
+            'Access-Control-Allow-Credentials': 'true'
+          }
+        });
+        
         console.log(res.data);
         res.data.forEach(artwork => {
           let image = Buffer.from(artwork.thumbnailImage).toString('base64');
@@ -93,7 +99,7 @@ export default function Main() {
         ) : (
           <>
             {itemList.map((item) => (
-              <div onClick={() => handleClick(item.id)} key={item.id} className="aspect-w-1 aspect-h-1">
+              <div onClick={() => handleClick(item.id)} key={item.id} className="aspect-w-1 aspect-h-1 cursor-pointer">
                 <Image src={item.thumbnailImage} alt="" layout="fill" objectFit="cover" />
                 
               </div>

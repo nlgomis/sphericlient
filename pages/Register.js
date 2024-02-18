@@ -16,6 +16,7 @@ import { redirect } from 'next/navigation'
 
 
 
+
 // Define your navigation links
 const navigation = [
   { name: 'Home', href: '/' },
@@ -83,9 +84,9 @@ if (userInfo) {
       toast.error('Passwords do not match');
     } else {
       try {
-        const res = await axios.post(`http://${URL_DOMAIN}/api/users/register`, formData);
+        const res = await axios.post(`${URL_DOMAIN}/api/users/register`, formData);
         dispatch(setCredentials({ ...res }));
-  //router.replace('/')     
+  router.replace('/')     
  } catch (err) {
         toast.error(err?.data?.message || err.error);
       }

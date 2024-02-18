@@ -153,7 +153,7 @@ export default function Upload() {
     };
 
     try {
-      const res = await axios.post(`http://${URL_DOMAIN}/api/artwork/upload`, data, config);
+      const res = await axios.post(`${URL_DOMAIN}/api/artwork/upload`, data, config);
       console.log(res);
       router.replace('/');
     } catch (err) {
