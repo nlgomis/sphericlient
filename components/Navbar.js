@@ -24,8 +24,8 @@ function useHasMounted() {
 
 
 const navigationNotLogged = [
-  { name: 'Sign Up', href: 'Register', current: false },
-  { name: 'Sign In', href: 'Login', current: false },
+  { name: 'Sign Up', href: '/Register', current: false },
+  { name: 'Sign In', href: '/Login', current: false },
 
 ]
 
@@ -52,7 +52,7 @@ export default function Navbar() {
   const URL_DOMAIN = process.env.NEXT_PUBLIC_URL_DOMAIN;
 
   const dispatch = useDispatch();
-  const { push } = useRouter();
+  const router  = useRouter();
 
 
   const handleLogout = async (e) => {
@@ -60,10 +60,10 @@ export default function Navbar() {
     try {
       e.preventDefault();
 
-      const res = await axios.post(`http://${URL_DOMAIN}/api/users/logout`);
+      const res = await axios.post(`${URL_DOMAIN}/api/users/logout`);
       console.log('hola')
       dispatch(logout());
-      push('/Login')
+      router.replace('/Login')
       //el router replace es molt rapid i bo ja que intercambia els components directament i no refresca la pagina diria
       //router.replace('/Login');
     } catch (err) {
@@ -71,11 +71,11 @@ export default function Navbar() {
     }
   };
   function redirectToUpload() {
-    push('/Upload');
+    router.replace('/Upload');
   }
 
   function redirectToMain() {
-    push('/');
+    router.replace('/');
   }
   useEffect(() => {
    console.log(userInfo);
@@ -249,17 +249,17 @@ export default function Navbar() {
                         className={classNames(
                           item.current
                             ? 'bg-gray-900 cursor-pointer text-white'
-                            : item.href === 'Login'
+                            : item.href === '/Login'
                               ? 'bg-spheri-violet cursor-pointer text-spheri-black hover:text-white'
                               : 'text-gray-300 bg-spheri-grey cursor-pointer hover:text-white',
                           'flex items-center rounded-md px-3 py-2 text-sm font-medium mr-5'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
-                        {item.href == 'Register' &&
+                        {item.href == '/Register' &&
                           <PencilSquareIcon className="h-5 w-5 mb-0.3 mr-2 cursor-pointer" aria-hidden="true" />
                         }
-                        {item.href == 'Login' &&
+                        {item.href == '/Login' &&
                           <ArrowRightOnRectangleIcon className="h-5 w-5 mr-2 cursor-pointer" aria-hidden="true" />
                         }
 
@@ -329,10 +329,10 @@ export default function Navbar() {
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
-                        {item.href == 'Register' &&
+                        {item.href == '/Register' &&
                           <PencilSquareIcon className="h-5 w-5 mr-2 cursor-pointer" aria-hidden="true" />
                         }
-                        {item.href == 'Login' &&
+                        {item.href == '/Login' &&
                           <ArrowRightOnRectangleIcon className="h-5 w-5 mr-2 cursor-pointer" aria-hidden="true" />
                         }
 
