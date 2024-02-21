@@ -20,7 +20,6 @@ function classNames(...classes) {
 
 export default function Main() {
   const router = useRouter(); // Initialize the router
-  const images = ['/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg', '/loopy.jpeg']
   const URL_DOMAIN = process.env.NEXT_PUBLIC_URL_DOMAIN;
   const [itemList, setItemList] = useState([]);
   const [isLogged, setIsLogged] = useState(true);
@@ -68,8 +67,7 @@ export default function Main() {
         
         console.log(res.data);
         res.data.forEach(artwork => {
-          let image = Buffer.from(artwork.thumbnailImage).toString('base64');
-          let imgSrc = `data:image/jpeg;base64,${image}`;
+          const imgSrc = artwork.thumbnailImage;
 
           setItemList(prevState => [...prevState, { id: artwork._id, thumbnailImage: imgSrc }]);
 
@@ -85,7 +83,7 @@ export default function Main() {
 
 
   return (
-    <div className='dark:bg-spheri-black-black'>
+    <div className='dark:bg-spheri-black-black bg-spheri-black-black'>
 
       <div className="grid m-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {loading ? (

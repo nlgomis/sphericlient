@@ -27,14 +27,11 @@ export default function Artwork() {
         const res = await axios.get(`${URL_DOMAIN}/api/artwork/getArtworkById/${id}`,);
         let artwork = res.data;
 
-        // Convert thumbnailImage to base64
-        let image = Buffer.from(artwork.thumbnailImage).toString('base64');
-        artwork.thumbnailImage = `data:image/jpeg;base64,${image}`;
+       
 
         // Convert artworkImages to base64 (assuming it's an array of binary data)
         for (let i = 0; i < artwork.artworkImages.length; i++) {
-          let imageArtwork = Buffer.from(artwork.artworkImages[i]).toString('base64');
-          artwork.artworkImages[i] = `data:image/jpeg;base64,${imageArtwork}`;
+          console.log('artwork.artworkImages[i]', artwork.artworkImages[i]);
         }
 
         //artwork.softwareused is an array but it always have on the first positoion an string with all the softwares separated by comma

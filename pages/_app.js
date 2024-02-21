@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   // You can include global JavaScript logic here, such as tracking analytics.
 
   return (
-    <div className="bg-spheri-black-black-black dark:bg-spheri-black-black-black">
+    <div className="min-h-screen bg-spheri-black-black dark:bg-spheri-black-black-black">
       <Provider store={store}>
 
       <Navbar />

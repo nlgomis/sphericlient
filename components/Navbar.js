@@ -150,7 +150,7 @@ export default function Navbar() {
                   {!isMobile && (
                     <form action="/search" className=" w-full px-4 ml-4 ">
                       <div className="relative">
-                        <input type="text" name="q" className="w-full focus:outline-none border h-10 shadow p-4 rounded-full text-sm focus:border-spheri-violet text-spheri-light-grey border border-spheri-violet rounded-lg dark:bg-spheri-black dark:focus:ring-spheri-violet-button dark:focus:border-spheri-violet dark:bg-spheri-black dark:border-spheri-violet dark:placeholder-spheri-medium-grey dark:text-white dark:focus:border-spheri-violet-button dark:hover:border-spheri-violet-button dark:active:border-spheri-violet-button" placeholder="Search..." />
+                        <input type="text" name="q" className="w-full focus:outline-none border h-10 shadow p-4 rounded-full text-sm focus:border-spheri-violet text-spheri-light-grey border border-spheri-violet rounded-lg dark:bg-spheri-black bg-spheri-black dark:focus:ring-spheri-violet-button dark:focus:border-spheri-violet dark:bg-spheri-black dark:border-spheri-violet dark:placeholder-spheri-medium-grey placeholder-spheri-medium-grey  dark:text-white dark:focus:border-spheri-violet-button dark:hover:border-spheri-violet-button dark:active:border-spheri-violet-button" placeholder="Search..." />
                         <button type="submit">
                           <svg className="text-spheri-light-grey h-5 w-5 absolute top-2.5 right-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
 
