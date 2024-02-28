@@ -190,7 +190,7 @@ export default function Upload() {
 
     <>
 
-      <div className="bg-white dark:bg-spheri-black-black sm:mx-8 md:mx-16 lg:mx-24 xl:mx-48">
+      <div className="bg-spheri-black-black dark:bg-spheri-black-black sm:mx-8 md:mx-16 lg:mx-24 xl:mx-48">
 
         <form onSubmit={handleSubmit} encType="multipart/form-data">
 
@@ -217,19 +217,19 @@ export default function Upload() {
 
 
           <div className="flex flex-col items-start justify-center w-98 mx-8 md:mx-28">
-            <div className="w-full px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
+            <div className="w-full px-5 pt-5 mb-2  rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey border   bg-spheri-black  border-spheri-grey">
 
-              <label for="artwork_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artwork Name</label>
+              <label for="artwork_name" className="block mb-2 text-sm font-medium text-white dark:text-white">Artwork Name</label>
               <input id="artwork_name" name="artworkName"
                 value={formData.artworkName}
-                onChange={handleInputChange} type="text" className="w-full px-3 py-2 mb-4 dark:bg-spheri-black border rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet dark:text-gray-300 dark:border-spheri-medium-grey " placeholder="Enter artwork name here" required />
+                onChange={handleInputChange} type="text" className="w-full px-3 py-2 mb-4 dark:bg-spheri-black bg-spheri-black  rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet active:border-spheri-violet dark:text-gray-300 text-gray-300 dark:border-spheri-medium-grey border-spheri-medium-grey" placeholder="Enter artwork name here" required />
             </div>
 
-            <div className="w-full  px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
+            <div className="w-full  px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border  border  dark:bg-spheri-black  dark:border-spheri-grey border-spheri-grey">
 
-              <label for="thumbnail" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Thumbnail Image</label>
+              <label for="thumbnail" className="block mb-2 text-sm font-medium text-white dark:text-white">Thumbnail Image</label>
               <div className="w-full mb-4">
-                <div className="relative border-dashed border-2 border-gray-400 dark:border-gray-600 rounded-lg w-56 h-56">
+                <div className="relative border-dashed border-2 border-gray-600 dark:border-gray-600 rounded-lg w-56 h-56">
                   <input type="file" onChange={handleInputChange}
                     className="absolute inset-0 z-50 w-full h-full p-0 m-0 opacity-0" id="thumbnail" name="thumbnail" accept="image/*" required />
                   <div className="absolute inset-0 z-40 flex flex-col items-center justify-center w-full h-full text-gray-400">
@@ -252,18 +252,18 @@ export default function Upload() {
               </div>
             </div>
             <div className="w-full px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
-            <label for="artwork_details" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artwork Details</label>
+            <label for="artwork_details" className="block mb-2 text-sm font-medium text-white dark:text-white">Artwork Details</label>
             <textarea id="artwork_details"
   name="artworkDetails"
   value={formData.artworkDetails}
   onChange={handleInputChange} 
-  className="w-full px-3 py-2 mb-4 text-gray-700 border rounded-lg dark:bg-spheri-black border rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet dark:text-gray-300 dark:border-spheri-medium-grey min-h-32 h-32" 
+  className="w-full px-3 py-2 mb-4 text-gray-300 border rounded-lg dark:bg-spheri-black bg-spheri-black  border rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet dark:text-gray-300 dark:border-spheri-medium-grey min-h-32 h-32" 
   placeholder="Enter artwork details here" required>
 </textarea></div>
 
 <div className="w-full px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
 
-            <label for="artworkImages" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artwork Images</label>
+            <label for="artworkImages" className="block mb-2 text-sm font-medium text-white dark:text-white">Artwork Images</label>
             <div className="w-full mb-4">
               <div className="relative border-dashed border-2 border-gray-400 dark:border-gray-600 rounded-lg h-40">
                 <input type="file"
@@ -290,12 +290,12 @@ export default function Upload() {
             </div>
             <div className="w-full px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
 
-            <label for="artwork_type" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type of Artwork</label>
+            <label for="artwork_type" className="block mb-2 text-sm font-medium text-white dark:text-white">Type of Artwork</label>
             <select
               id="artwork_type"
               value={formData.artworkType}
               onChange={handleArtworkTypeChange}
-              className="w-full px-3 py-2 mb-4 text-gray-700 border rounded-lg dark:bg-spheri-black border rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet dark:text-gray-300 dark:border-spheri-medium-grey"
+              className="w-full px-3 py-2 mb-4 text-gray-300 border rounded-lg dark:bg-spheri-black  bg-spheri-black border rounded-lg focus:outline-none focus:ring-0 active:outline-none focus:border-spheri-violet dark:active:border-spheri-violet dark:text-gray-300 dark:border-spheri-medium-grey"
               required
             >
               <option value="" disabled defaultValue>
@@ -310,7 +310,7 @@ export default function Upload() {
             </div>
             <div className="w-full px-5 pt-5 mb-2 bg-spheri-black rounded-lg shadow dark:border   dark:bg-spheri-black  dark:border-spheri-grey">
 
-            <label for="software_used" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Software Used</label>
+            <label for="software_used" className="block mb-2 text-sm font-medium text-white dark:text-white">Software Used</label>
             
             
             
@@ -319,7 +319,7 @@ export default function Upload() {
         <label key={index} className="inline-flex items-center mr-4">
             <input type="checkbox" className="text-blue-500 form-checkbox" id={`software_${software.name.toLowerCase()}`} name={software.name.toLowerCase()} checked={formData.softwareUsed.includes(software.name.toLowerCase())}
                 onChange={handleCheckboxChange} />
-            <span className="ml-2 text-gray-700 dark:text-gray-300">{software.name}</span>
+            <span className="ml-2 text-gray-300 dark:text-gray-300">{software.name}</span>
         </label>
     ))}
 </div>
